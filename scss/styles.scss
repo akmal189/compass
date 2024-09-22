@@ -10,6 +10,8 @@
     font-style: normal;
     font-weight: normal;
 }
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
 $mainfont1: 'helvetica-light', sans-serif;
 $mainfont2: 'helvetica', sans-serif;
 :root {
@@ -68,6 +70,15 @@ img, iframe, video {
     max-width: 1320px;
     margin: 0 auto;
 }
+.block-title {
+    font-family: $mainfont1;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: left;
+    color: #030344;
+    text-transform: uppercase;
+}
 
 .site-header {
     position: fixed;
@@ -75,7 +86,13 @@ img, iframe, video {
     left: 0;
     right: 0;
     z-index: 20;
-    background: #fff;
+    transition: all .3s ease;
+    &.fixed {
+        background: #fff;
+        .site-header__button {
+            display: block;
+        }
+    }
     &__inner {
         padding: 20px 0;
         display: flex;
@@ -95,7 +112,7 @@ img, iframe, video {
         }
     }
     &__button {
-        
+        display: none;
         a {
             border-radius: 250px;
             color: #fff;
@@ -156,6 +173,110 @@ img, iframe, video {
             &.active {
                 color: #030344;
             }
+        }
+    }
+}
+
+.first-block {
+    position: relative;
+    padding-top: 171px;
+    padding-bottom: 128px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 60%;
+        background: #1F2025;
+        border-radius: 0 0 150px 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 75px;
+        right: 0;
+        width: 56%;
+        border-radius: 0 150px 0 0;
+        background: linear-gradient(240.03deg, rgba(11, 185, 238, 0.3) 10.19%, rgba(59, 60, 254, 0.3) 44.73%, rgba(220, 128, 254, 0.3) 91.47%);
+        backdrop-filter: blur(20px);
+        transform: rotate(180deg);
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+        gap: 170px;
+    }
+    &__left {
+        width: calc(50% - 165px);
+    }
+    &__title {
+        font-family: "Geologica", sans-serif;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 50px;
+        color: #fff;
+        margin: 0 0 15px;
+    }
+    &__desc {
+        font-family: $mainfont2;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 36px;
+        text-align: left;
+        color: var(--primary);
+    }
+    &__text {
+        padding-top: 25px;
+        margin-top: 32px;
+        border-top: 1px solid rgba(#fff, .1);
+        font-family: $mainfont1;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        text-align: left;
+        color: #A9A9A9;
+    }
+    &__btn {
+        margin-top: 14px;
+        a {
+            border-radius: 250px;
+            color: #fff;
+            padding: 8px 28px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all .5s ease;
+            font-family: $mainfont2;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            background: var(--primary);
+            position: relative;
+            &:after {
+                content: '';
+                position: relative;
+                display: inline-block;
+                min-width: 20px;
+                width: 20px;
+                height: 15px;
+                background: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.9835 8.60261C21.374 8.21209 21.374 7.57893 20.9835 7.1884L14.6195 0.82444C14.229 0.433916 13.5958 0.433916 13.2053 0.82444C12.8148 1.21496 12.8148 1.84813 13.2053 2.23865L18.8622 7.89551L13.2053 13.5524C12.8148 13.9429 12.8148 14.5761 13.2053 14.9666C13.5958 15.3571 14.229 15.3571 14.6195 14.9666L20.9835 8.60261ZM0.276367 8.89551H20.2764V6.89551H0.276367V8.89551Z' fill='white'/%3E%3C/svg%3E%0A") 50%/cover no-repeat;
+            }
+        }
+    }
+    &__right {
+        width: calc(50% - 85px);
+        font-size: 0;
+        padding-right: 26px;
+    }
+    &__video {
+        border-radius: 15px;
+        overflow: hidden;
+        iframe {
+            width: 100%;
         }
     }
 }
