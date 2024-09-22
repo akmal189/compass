@@ -1,0 +1,185 @@
+@font-face {
+    font-family: "helvetica-light";
+    src: url("../fonts/helvetica-l.otf");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "helvetica";
+    src: url("../fonts/helvetica.ttf");
+    font-style: normal;
+    font-weight: normal;
+}
+:root {
+    --primary: #0BB9EE;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    font-family: "helvetica-light", sans-serif;
+}
+
+h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+.overflow_hidden {
+    overflow: hidden !important;
+}
+
+.swiper {
+    overflow: hidden;
+}
+
+.hide {
+    display: none !important;
+}
+
+* {
+    font-family: "helvetica-light", sans-serif;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img, iframe, video {
+    max-width: 100%;
+}
+
+.block-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.block-width {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background: #fff;
+}
+.site-header__inner {
+    padding: 20px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 34px;
+}
+.site-header__left {
+    margin-right: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 40px;
+}
+.site-header__logo {
+    font-size: 0;
+}
+.site-header__logo img {
+    max-width: 155px;
+}
+.site-header__button a {
+    border-radius: 250px;
+    color: #fff;
+    padding: 8px 28px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 10px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    font-family: "helvetica", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    background: var(--primary);
+    position: relative;
+}
+.site-header__button a:after {
+    content: "";
+    position: relative;
+    display: inline-block;
+    min-width: 20px;
+    width: 20px;
+    height: 15px;
+    background: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.9835 8.60261C21.374 8.21209 21.374 7.57893 20.9835 7.1884L14.6195 0.82444C14.229 0.433916 13.5958 0.433916 13.2053 0.82444C12.8148 1.21496 12.8148 1.84813 13.2053 2.23865L18.8622 7.89551L13.2053 13.5524C12.8148 13.9429 12.8148 14.5761 13.2053 14.9666C13.5958 15.3571 14.229 15.3571 14.6195 14.9666L20.9835 8.60261ZM0.276367 8.89551H20.2764V6.89551H0.276367V8.89551Z' fill='white'/%3E%3C/svg%3E%0A") 50%/cover no-repeat;
+}
+.site-header__menu nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 22px;
+}
+.site-header__menu nav ul li a {
+    color: #000;
+    font-family: "helvetica-light", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.site-header__langs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 5px;
+    font-family: mainfont1;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #7B7B7B;
+}
+.site-header__langs a {
+    color: #7B7B7B;
+}
+.site-header__langs a.active {
+    color: #030344;
+}
