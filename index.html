@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 <title>Compass</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/css/swiper.min.css"/>
 <link rel="stylesheet" href="src/css/styles.css">
 </head>
 <body>
@@ -13,6 +14,7 @@
 <div class="site-header__left">
 <div class="site-header__logo">
 <img src="src/images/compass_logo.svg" alt="logo" class="black_logo">
+<img src="src/images/logo_white.svg" alt="logo" class="white_logo">
 </div>
 <div class="site-header__button">
 <a href="#">Request Demo</a>
@@ -55,90 +57,111 @@
 </div>
 </div>
 </section>
-<section class="problems-block block-padding">
-<div class="problems-block__inner block-width">
+<section class="problems-block block-padding" id="block1">
+<div class="problems-block__inner">
 <div class="problems-block__top">
 <div class="problems-block__title block-title">Problems</div>
 <div class="problems-block__desc">Running a dental or ortho practice comes with a unique set of challenges. Here are some of the common pain points that can hinder your practice's efficiency and growth:</div>
 </div>
 <div class="problems-block__list">
-<div class="problems-block__list-slider">
-<div class="problems-block__item">
+<div class="problems-block__list-slider swiper">
+<div class="swiper-wrapper">
+<div class="problems-block__item swiper-slide">
 <div class="problems-block__item-title">Appointment Scheduling and Management</div>
 <div class="problems-block__item-icon">
+<span>
 <img src="src/images/problems_icon1.svg" alt="problems_icon1">
+</span>
 </div>
 <div class="problems-block__item-problem">
 <div class="problems-block__item-problemTitle">Problem:</div>
 <div class="problems-block__item-problemText">Managing appointments manually can lead to double bookings, missed appointments, and inefficient time use.</div>
 </div>
-<div class="problems-block__item-impact"></div>
+<div class="problems-block__item-impact">
 <div class="problems-block__item-impactTitle">Impact:</div>
 <div class="problems-block__item-impactText">This results in frustration for staff and patients, leading to lost revenue and decreased patient satisfaction.</div>
 </div>
 </div>
-<div class="problems-block__item"></div>
+<div class="problems-block__item swiper-slide">
 <div class="problems-block__item-title">Patient Records and Documentation</div>
 <div class="problems-block__item-icon">
+<span>
 <img src="src/images/problems_icon2.svg" alt="problems_icon2">
+</span>
 </div>
 <div class="problems-block__item-problem">
 <div class="problems-block__item-problemTitle">Problem:</div>
 <div class="problems-block__item-problemText">Keeping accurate and up-to-date patient records is a time-consuming and error-prone task.</div>
 </div>
-<div class="problems-block__item-impact"></div>
+<div class="problems-block__item-impact">
 <div class="problems-block__item-impactTitle">Impact:</div>
 <div class="problems-block__item-impactText">Inefficient record-keeping can lead to misplaced documents, delayed treatments, and compliance issues, ultimately affecting the quality of patient care.</div>
 </div>
 </div>
-<div class="problems-block__item"></div>
+<div class="problems-block__item swiper-slide">
 <div class="problems-block__item-title">Billing and Insurance Processing</div>
 <div class="problems-block__item-icon">
+<span>
 <img src="src/images/problems_icon3.svg" alt="problems_icon3">
+</span>
 </div>
 <div class="problems-block__item-problem">
 <div class="problems-block__item-problemTitle">Problem:</div>
 <div class="problems-block__item-problemText">Handling billing and insurance claims involves complex procedures and is prone to errors.</div>
 </div>
-<div class="problems-block__item-impact"></div>
+<div class="problems-block__item-impact">
 <div class="problems-block__item-impactTitle">Impact:</div>
 <div class="problems-block__item-impactText">Incorrect billing and delayed insurance claims can cause financial strain and administrative burdens, reducing the practice's profitability.</div>
 </div>
 </div>
-<div class="problems-block__item"></div>
+<div class="problems-block__item swiper-slide">
 <div class="problems-block__item-title">Patient Communication and Engagement</div>
 <div class="problems-block__item-icon">
+<span>
 <img src="src/images/problems_icon4.svg" alt="problems_icon4">
+</span>
 </div>
 <div class="problems-block__item-problem">
 <div class="problems-block__item-problemTitle">Problem:</div>
 <div class="problems-block__item-problemText">Maintaining effective communication with patients is challenging, leading to missed appointments and lacking engagement.</div>
 </div>
-<div class="problems-block__item-impact"></div>
+<div class="problems-block__item-impact">
 <div class="problems-block__item-impactTitle">Impact:</div>
 <div class="problems-block__item-impactText">Poor communication can result in lower patient retention rates and decreased adherence to treatment plans, which can impact overall patient outcomes.</div>
 </div>
 </div>
-<div class="problems-block__item"></div>
+<div class="problems-block__item swiper-slide">
 <div class="problems-block__item-title">Appointment Scheduling and Management</div>
 <div class="problems-block__item-icon">
+<span>
 <img src="src/images/problems_icon1.svg" alt="problems_icon1">
+</span>
 </div>
 <div class="problems-block__item-problem">
 <div class="problems-block__item-problemTitle">Problem:</div>
 <div class="problems-block__item-problemText">Managing appointments manually can lead to double bookings, missed appointments, and inefficient time use.</div>
 </div>
-<div class="problems-block__item-impact"></div>
+<div class="problems-block__item-impact">
 <div class="problems-block__item-impactTitle">Impact:</div>
 <div class="problems-block__item-impactText">This results in frustration for staff and patients, leading to lost revenue and decreased patient satisfaction.</div>
 </div>
 </div>
 </div>
 </div>
-<div class="problems-block__check-text">Addressing these pain points can significantly improve your practice's operational efficiency, enhance patient satisfaction, and drive growth.</div>
+<div class="problems-block__slider-controls">
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
+</div>
+</div>
+<div class="problems-block__check-text">
+<div class="icon">
+<img src="src/images/check_icon.svg" alt="check_icon">
+</div>
+<div class="text">Addressing these pain points can significantly improve your practice's operational efficiency, enhance patient satisfaction, and drive growth.</div>
+</div>
 </div>
 </section>
-<section class="solutions-block block-padding">
+<section class="solutions-block block-padding" id="block2">
 <div class="solutions-block__inner block-width">
 <div class="solutions-block__center">
 <div class="solutions-block__top">
@@ -152,6 +175,11 @@
 <div class="solutions-block__list">
 <div class="solutions-block__item">
 <div class="solutions-block__item-image">
+<div class="image-btns">
+<div></div>
+<div></div>
+<div></div>
+</div>
 <img src="src/images/solutions_image1.png" alt="solutions_image1">
 </div>
 <div class="solutions-block__item-right">
@@ -166,8 +194,13 @@
 </div>
 </div>
 </div>
-<div class="solutions-block__item"></div>
+<div class="solutions-block__item">
 <div class="solutions-block__item-image">
+<div class="image-btns">
+<div></div>
+<div></div>
+<div></div>
+</div>
 <img src="src/images/solutions_image2.png" alt="solutions_image2">
 </div>
 <div class="solutions-block__item-right">
@@ -203,21 +236,21 @@
 </div>
 </div>
 </section>
-<section class="features-block">
+<section class="features-block" id="block3">
 <div class="features-block__inner">
 <div class="features-block__image">
 <img src="src/images/features_image.png" alt="features_image">
 </div>
 <div class="features-block__right">
-<div class="features-block__title block-title">
+<div class="features-block__title">
 <div class="bg-title">Features</div>
-<div class="title">Features</div>
-</div>
+<div class="title block-title">Features</div>
 </div>
 <div class="features-block__list">
-<div class="features-block__slider">
-<div class="features-block__item" style="background: url('src/images/features_icon1.svg') right 16px top 50% no-repeat #fff;">
-<div class="features-block__item-title">
+<div class="features-block__slider swiper">
+<div class="swiper-wrapper">
+<div class="features-block__item swiper-slide">
+<div class="features-block__item-title" style="background: url('src/images/features_icon1.svg') right 16px top 50% no-repeat #fff;">
 <div class="title">Patient Management and EMR</div>
 </div>
 <div class="features-block__item-list">
@@ -235,8 +268,8 @@
 </div>
 </div>
 </div>
-<div class="features-block__item" style="background: url('src/images/features_icon2.svg') right 16px top 50% no-repeat #fff;">
-<div class="features-block__item-title">
+<div class="features-block__item swiper-slide">
+<div class="features-block__item-title" style="background: url('src/images/features_icon2.svg') right 16px top 50% no-repeat #fff;">
 <div class="title">Document Management and Digital Signature</div>
 </div>
 <div class="features-block__item-list">
@@ -254,8 +287,8 @@
 </div>
 </div>
 </div>
-<div class="features-block__item" style="background: url('src/images/features_icon3.svg') right 16px top 50% no-repeat #fff;">
-<div class="features-block__item-title">
+<div class="features-block__item swiper-slide">
+<div class="features-block__item-title" style="background: url('src/images/features_icon3.svg') right 16px top 50% no-repeat #fff;">
 <div class="title">Communication Management</div>
 </div>
 <div class="features-block__item-list">
@@ -273,7 +306,7 @@
 </div>
 </div>
 </div>
-<div class="features-block__item"></div>
+<div class="features-block__item swiper-slide">
 <div class="features-block__item-title">
 <div class="title">Appointment Scheduling</div>
 </div>
@@ -291,6 +324,12 @@
 <div class="text">Streamline the scheduling process, saving time for both staff and patients.</div>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="features-block__slider-controls">
+<div class="swiper-button-prev"></div>
+<div class="swiper-button-next"></div>
 </div>
 </div>
 </div>
@@ -329,7 +368,7 @@
 </div>
 </div>
 </section>
-<section class="steps-block block-padding">
+<section class="steps-block block-padding" id="block4">
 <div class="steps-block__inner block-width">
 <div class="steps-block__header">
 <div class="steps-block__title block-title">Easy Steps</div>
@@ -338,7 +377,7 @@
 <div class="steps-block__list">
 <div class="steps-block__item">
 <div class="steps-block__item-header">
-<div class="steps-block__item-number">01</div>
+<div class="steps-block__item-number"><span>01</span></div>
 <div class="steps-block__item-title">Sign Up</div>
 </div>
 <div class="steps-block__item-list">
@@ -358,7 +397,7 @@
 </div>
 <div class="steps-block__item">
 <div class="steps-block__item-header">
-<div class="steps-block__item-number">02</div>
+<div class="steps-block__item-number"><span>02</span></div>
 <div class="steps-block__item-title">Onboard Your Team</div>
 </div>
 <div class="steps-block__item-list">
@@ -378,7 +417,7 @@
 </div>
 <div class="steps-block__item">
 <div class="steps-block__item-header">
-<div class="steps-block__item-number">03</div>
+<div class="steps-block__item-number"><span>03</span></div>
 <div class="steps-block__item-title">Manage Effortlessly</div>
 </div>
 <div class="steps-block__item-list">
@@ -407,10 +446,12 @@
 </div>
 <div class="services-block__list">
 <div class="services-block__item">
+<div class="services-block__item-header">
 <div class="services-block__item-icon">
-<img src="src/images/services_icon1.svg" alt="services_icon1">
+<span><img src="src/images/services_icon1.svg" alt="services_icon1"></span>
 </div>
 <div class="services-block__item-title">Patient Data Migration</div>
+</div>
 <div class="services-block__item-list">
 <div class="list-item">
 <div class="list-item__title">Seamless Transition:</div>
@@ -427,10 +468,12 @@
 </div>
 </div>
 <div class="services-block__item">
+<div class="services-block__item-header">
 <div class="services-block__item-icon">
-<img src="src/images/services_icon2.svg" alt="services_icon2">
+<span><img src="src/images/services_icon2.svg" alt="services_icon2"></span>
 </div>
 <div class="services-block__item-title">Data Management (Automatic Backups)</div>
+</div>
 <div class="services-block__item-list">
 <div class="list-item">
 <div class="list-item__title">Secure Storage:</div>
@@ -447,10 +490,12 @@
 </div>
 </div>
 <div class="services-block__item">
+<div class="services-block__item-header">
 <div class="services-block__item-icon">
-<img src="src/images/services_icon3.svg" alt="services_icon3">
+<span><img src="src/images/services_icon3.svg" alt="services_icon3"></span>
 </div>
 <div class="services-block__item-title">Training Your Team / Crew</div>
+</div>
 <div class="services-block__item-list">
 <div class="list-item">
 <div class="list-item__title">Comprehensive Training:</div>
@@ -467,10 +512,12 @@
 </div>
 </div>
 <div class="services-block__item">
+<div class="services-block__item-header">
 <div class="services-block__item-icon">
-<img src="src/images/services_icon4.svg" alt="services_icon4">
+<span><img src="src/images/services_icon4.svg" alt="services_icon4"></span>
 </div>
 <div class="services-block__item-title">Office Support</div>
+</div>
 <div class="services-block__item-list">
 <div class="list-item">
 <div class="list-item__title">Dedicated Assistance:</div>
@@ -490,51 +537,92 @@
 </div>
 </section>
 <section class="stories-block">
-<div class="stories-block__inner">
-<div class="stories-block__left">
-<div class="stories-block__title block-title"></div>
+<div class="stories-block__inner block-width">
+<div class="stories-block__header">
+<div class="stories-block__title block-title">Transformation Stories</div>
+<div class="stories-block__desc">Discover how COMPASS has revolutionized practice management for dental and ortho offices, leading to increased efficiency, better patient care, and significant growth. Here are a few success stories from our satisfied clients:</div>
 </div>
-<div class="stories-block__right"></div>
+<div class="stories-block__body">
+<div class="stories-block__slider swiper">
+<div class="swiper-wrapper">
+<div class="stories-block__item swiper-slide">
+<div class="stories-block__left">
+<div class="stories-block__case-study">Case Study 1: </div>
+<div class="stories-block__item-title">Dr. Smith's Orthodontic Practice</div>
+<div class="stories-block__challenge">Challenge:</div>
+<div class="stories-block__challenge-text">Dr. Smith's practice struggled with inefficient appointment scheduling, which resulted in frequent double bookings and no-shows. Manually managing patient records was time-consuming, and billing errors were affecting the practice’s revenue.</div>
+<div class="stories-block__solution">Solution:</div>
+<div class="stories-block__solution-text">After implementing COMPASS, Dr. Smith’s practice transformed its operations with automated appointment scheduling, streamlined patient records management, and accurate billing integration.</div>
+</div>
+<div class="stories-block__right">
+<div class="stories-block__results">
+<div class="stories-block__results-title">Results:</div>
+<div class="stories-block__results-list">
+<div class="stories-block__result-item"><b>30% Reduction in No-Shows:</b> Automated reminders and flexible scheduling reduced missed appointments significantly.</div>
+<div class="stories-block__result-item"><b>Improved Efficiency:</b> The practice saved over 10 weekly hours on administrative tasks, allowing staff to focus more on patient care.</div>
+<div class="stories-block__result-item"><b>Increased Revenue:</b> Accurate billing and faster insurance claim processing boosted the practice’s revenue by 20%.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="stories-block__item swiper-slide">
+<div class="stories-block__left">
+<div class="stories-block__case-study">Case Study 2: </div>
+<div class="stories-block__item-title">Slide 2</div>
+<div class="stories-block__challenge">Challenge:</div>
+<div class="stories-block__challenge-text">Dr. Smith's practice struggled with inefficient appointment scheduling, which resulted in frequent double bookings and no-shows. Manually managing patient records was time-consuming, and billing errors were affecting the practice’s revenue.</div>
+<div class="stories-block__solution">Solution:</div>
+<div class="stories-block__solution-text">After implementing COMPASS, Dr. Smith’s practice transformed its operations with automated appointment scheduling, streamlined patient records management, and accurate billing integration.</div>
+</div>
+<div class="stories-block__right">
+<div class="stories-block__results">
+<div class="stories-block__results-title">Results 2:</div>
+<div class="stories-block__results-list">
+<div class="stories-block__result-item"><b>30% Reduction in No-Shows:</b> Automated reminders and flexible scheduling reduced missed appointments significantly.</div>
+<div class="stories-block__result-item"><b>Improved Efficiency:</b> The practice saved over 10 weekly hours on administrative tasks, allowing staff to focus more on patient care.</div>
+<div class="stories-block__result-item"><b>Increased Revenue:</b> Accurate billing and faster insurance claim processing boosted the practice’s revenue by 20%.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
 </div>
 </section>
-<section class="support-block block-padding">
+<section class="support-block block-padding" id="block5">
 <div class="support-block__inner block-width">
 <div class="support-block__title block-title">Support</div>
 <div class="support-block__list">
 <div class="support-block__item">
-<a href="#">
+<div class="support-block__item-icon"><span></span></div>
 <span class="support-block__item-title">FAQs</span>
-</a>
 </div>
 <div class="support-block__item">
-<a href="#">
+<div class="support-block__item-icon"><span></span></div>
 <span class="support-block__item-title">Resources</span>
-</a>
 </div>
 <div class="support-block__item">
-<a href="#">
+<div class="support-block__item-icon"><span></span></div>
 <span class="support-block__item-title">System Requirements</span>
-</a>
 </div>
 <div class="support-block__item">
-<a href="#">
+<div class="support-block__item-icon"><span></span></div>
 <span class="support-block__item-title">Hardware Requirements</span>
-</a>
 </div>
 <div class="support-block__item">
-<a href="#">
+<div class="support-block__item-icon"><span></span></div>
 <span class="support-block__item-title">Imaging Compatibility</span>
-</a>
 </div>
 <div class="support-block__item">
-<a href="#">
+<div class="support-block__item-icon"><span></span></div>
 <span class="support-block__item-title">Service Status (TBD)</span>
-</a>
 </div>
 </div>
 </div>
 </section>
-<section class="pricing-block block-padding">
+<section class="pricing-block block-padding" id="block6">
 <div class="pricing-block__inner block-width">
 <div class="pricing-block__header">
 <div class="pricing-block__title block-title">Pricing</div>
@@ -548,13 +636,14 @@
 <div class="pricing-block__items-title">Per Additional User Fee</div>
 </div>
 <div class="pricing-block__slider">
-<div class="pricing-block__slider-inner">
-<div class="pricing-block__item">
+<div class="pricing-block__slider-inner swiper">
+<div class="swiper-wrapper">
+<div class="pricing-block__item swiper-slide">
 <div class="pricing-block__item-title">Essential</div>
 <div class="pricing-block__item-body">
 <div class="pricing-block__item-price">
 <div class="mobile-title">Monthly Price</div>
-<div class="title">$99</div>
+<div class="title"><b>$99</b></div>
 </div>
 <div class="pricing-block__item-price">
 <div class="mobile-title">Annual Price (10% discount)</div>
@@ -573,12 +662,12 @@
 <a href="#">more detalis</a>
 </div>
 </div>
-<div class="pricing-block__item">
+<div class="pricing-block__item swiper-slide">
 <div class="pricing-block__item-title">Professional</div>
 <div class="pricing-block__item-body">
 <div class="pricing-block__item-price">
 <div class="mobile-title">Monthly Price</div>
-<div class="title">$199</div>
+<div class="title"><b>$199</b></div>
 </div>
 <div class="pricing-block__item-price">
 <div class="mobile-title">Annual Price (10% discount)</div>
@@ -597,12 +686,12 @@
 <a href="#">more detalis</a>
 </div>
 </div>
-<div class="pricing-block__item">
+<div class="pricing-block__item swiper-slide">
 <div class="pricing-block__item-title">Enterprise</div>
 <div class="pricing-block__item-body">
 <div class="pricing-block__item-price">
 <div class="mobile-title">Monthly Price</div>
-<div class="title">$299</div>
+<div class="title"><b>$299</b></div>
 </div>
 <div class="pricing-block__item-price">
 <div class="mobile-title">Annual Price (10% discount)</div>
@@ -619,6 +708,7 @@
 </div>
 <div class="pricing-block__item-btn">
 <a href="#">more detalis</a>
+</div>
 </div>
 </div>
 </div>
@@ -645,7 +735,7 @@
 <input type="phone" placeholder="Phone">
 </div>
 <div class="demobook-block__form-field">
-<input type="mail" placeholder="Email">
+<input type="email" placeholder="Email">
 </div>
 <div class="demobook-block__form-field">
 <select>
@@ -655,28 +745,28 @@
 </select>
 </div>
 <div class="delim"></div>
-<div class="demobook-block__form-field">
+<div class="demobook-block__form-field half-width">
 <select>
 <option value="What best describes your role?" selected>What best describes your role?</option>
 <option value="1">1</option>
 <option value="2">2</option>
 </select>
 </div>
-<div class="demobook-block__form-field">
+<div class="demobook-block__form-field half-width">
 <select>
 <option value="Is there any other information we should know?" selected>Is there any other information we should know?</option>
 <option value="1">1</option>
 <option value="2">2</option>
 </select>
 </div>
-<div class="demobook-block__form-field">
+<div class="demobook-block__form-field half-width">
 <select>
 <option value="How many dental office locations are in your practice?*" selected>How many dental office locations are in your practice?*</option>
 <option value="1">1</option>
 <option value="2">2</option>
 </select>
 </div>
-<div class="demobook-block__form-field">
+<div class="demobook-block__form-field half-width">
 <select>
 <option value="What is your current practice management software?" selected>What is your current practice management software?</option>
 <option value="1">1</option>
@@ -684,25 +774,32 @@
 </select>
 </div>
 <div class="demobook-block__form-field form-button">
-<input type="submit" value="Send">
+<button type="submit">
+<span>Send</span>
+<span class="icon">
+<svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.2071 8.70711C21.5976 8.31658 21.5976 7.68342 21.2071 7.29289L14.8431 0.928932C14.4526 0.538408 13.8195 0.538408 13.4289 0.928932C13.0384 1.31946 13.0384 1.95262 13.4289 2.34315L19.0858 8L13.4289 13.6569C13.0384 14.0474 13.0384 14.6805 13.4289 15.0711C13.8195 15.4616 14.4526 15.4616 14.8431 15.0711L21.2071 8.70711ZM0.5 9H20.5V7H0.5V9Z" fill="white"/>
+</svg>
+</span>
+</button>
 </div>
 </div>
-<div class="form_success" style="display: none;">Форма отправлена!</div>
+<div class="form_success" style="display: none;">Form submited!</div>
 </form>
 </div>
 </div>
 </section>
-<footer class="site-footer block-padding">
+<footer class="site-footer block-padding" id="block7">
 <div class="site-footer__inner block-width">
 <div class="site-footer__left">
 <div class="site-footer__logo">
-<img src="src/images/compass_logo.svg" alt="compass_logo">
+<img src="src/images/logo_white.svg" alt="compass_logo">
 </div>
 <div class="site-footer__copyright">Copyright © 2023 compass. All Rights Reserved.</div>
 </div>
 <div class="site-footer__right">
 <div class="site-footer__address">
-<div class="site-footer__address">123007, Canada ,text adress</div>
+<div class="site-footer__address-text">123007, Canada,<br>text adress</div>
 <div class="site-footer__socials">
 <div class="site-footer__socials-item">
 <a href="#">
@@ -742,12 +839,31 @@
 </div>
 </div>
 <div class="site-footer__btn">
-<a href="#">Сonsultation</a>
+<a href="#">
+<span>Сonsultation</span>
+<span class="icon">
+<svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.2071 8.70711C21.5976 8.31658 21.5976 7.68342 21.2071 7.29289L14.8431 0.928932C14.4526 0.538408 13.8195 0.538408 13.4289 0.928932C13.0384 1.31946 13.0384 1.95262 13.4289 2.34315L19.0858 8L13.4289 13.6569C13.0384 14.0474 13.0384 14.6805 13.4289 15.0711C13.8195 15.4616 14.4526 15.4616 14.8431 15.0711L21.2071 8.70711ZM0.5 9H20.5V7H0.5V9Z" fill="white"/>
+</svg>
+</span>
+</a>
 </div>
 </div>
 </div>
 </footer>
 </div>
+<div class="to-top-btn">
+<a href="javascript:void(0);">
+<svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.91582 0.290939C8.52529 -0.0995846 7.89213 -0.0995846 7.5016 0.290939L1.13764 6.6549C0.747117 7.04543 0.747117 7.67859 1.13764 8.06911C1.52817 8.45964 2.16133 8.45964 2.55186 8.06911L8.20871 2.41226L13.8656 8.06911C14.2561 8.45964 14.8893 8.45964 15.2798 8.06911C15.6703 7.67859 15.6703 7.04543 15.2798 6.6549L8.91582 0.290939ZM9.20871 16.998L9.20871 0.998047L7.20871 0.998047L7.20871 16.998L9.20871 16.998Z" fill="black"/>
+</svg>
+</a>
+</div>
+<div class="burger_menu">
+<div class="burger_menu__closer"></div>
+<div class="burger_menu__inner"></div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.2.2/js/swiper.min.js"></script>
 <script src="src/js/app.js"></script>
 </body>
 </html>
