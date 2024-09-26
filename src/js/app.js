@@ -179,7 +179,28 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             });
-        }
+        },
         // PRICING-BLOCK END
+
+        // BLOCK ANIMATIONS BEGIN
+        animationsFunctions: function() {
+            const blocks = document.querySelectorAll(".site-wrapper > section");
+            gsap.registerPlugin(ScrollTrigger);
+            blocks.forEach((block) => {
+                gsap.set(block, { opacity: 0, y: 250 });
+
+                ScrollTrigger.create({
+                    trigger: block,
+                    scroller: "body",
+                    start: "top 89%",
+                    stagger: 2.7, // Задержка между анимацией элементов
+                    toggleActions: "play reverse play reverse",
+                    onEnter: () => {
+                        gsap.to(block, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" });
+                    }
+                });
+            });
+        }
+        // BLOCK ANIMATIONS END
     }
 }())
