@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.preventDefault();
                     blockId = item.getAttribute('href');
                     scrollToElement(blockId, 100);
-                    document.querySelector('.burger-menu').classList.remove('opened')
+                    document.querySelector('.site-header__burger-btn').classList.remove('opened')
+                    document.querySelector('.site-header__right').classList.remove('opened')
                     document.querySelector('html').classList.remove('overflow_hidden')
                 })
             })
@@ -98,19 +99,55 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 breakpoints: {
                     551: {
-                        slidesPerView: 1
+                        slidesPerView: 1.2
                     },
                     981: {
-                        slidesPerView: 2
+                        slidesPerView: 2.3
                     },
                     1100: {
-                        slidesPerView: 3
+                        slidesPerView: 3.3
                     }
                 }
             });
         },
         // PROBLEMS-BLOCK END
 
+        // SOLUTIONS-BLOCK BEGIN
+        solutionsFunctions: function() {
+            if(IsMobile) {
+                const SWIPER_SOLUTIONS = new Swiper('.swiper.solutions-block__bottom-list', {
+                    slidesPerView: 4,
+                    loop: false,
+                    effect: 'slide',
+                    speed: 1000,
+                    spaceBetween: 36,
+                    lazy: {
+                        loadPrevNext: true, // pre-loads the next image to avoid showing a loading placeholder if possible
+                        loadPrevNextAmount: 2 //or, if you wish, preload the next 2 images
+                    },
+                    navigation: {
+                        nextEl: '.solutions-block__slider-controls .swiper-button-next',
+                        prevEl: '.solutions-block__slider-controls .swiper-button-prev',
+                    },
+                    breakpoints: {
+                        551: {
+                            spaceBetween: 20,
+                            slidesPerView: 1.2
+                        },
+                        800: {
+                            spaceBetween: 20,
+                            slidesPerView: 2
+                        },
+                        1024: {
+                            spaceBetween: 20,
+                            slidesPerView: 3
+                        }
+                    }
+                });
+            }
+        },
+        // SOLUTIONS-BLOCK END
+            
         // FEATURES-BLOCK BEGIN
         featuresFunctions: function() {
             const SWIPER2 = new Swiper('.swiper.features-block__slider', {
@@ -128,8 +165,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     prevEl: '.features-block__slider-controls .swiper-button-prev',
                 },
                 breakpoints: {
-                    1024: {
-                        slidesPerView: 1
+                    550: {
+                        spaceBetween: 20,
+                        slidesPerView: 1.2
+                    },
+                    640: {
+                        spaceBetween: 20,
+                        slidesPerView: 2.2
+                    },
+                    640: {
+                        spaceBetween: 20,
+                        slidesPerView: 2.2
                     },
                     1450: {
                         spaceBetween: 20,
@@ -139,6 +185,38 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         },
         // FEATURES-BLOCK END
+
+        // SERVICES-BLOCK BEGIN
+        servicesFunctions: function() {
+            if(IsMobile) {
+                const SWIPER_SERVICES = new Swiper('.swiper.services-block__list', {
+                    slidesPerView: 4,
+                    loop: false,
+                    effect: 'slide',
+                    speed: 1000,
+                    spaceBetween: 36,
+                    lazy: {
+                        loadPrevNext: true, // pre-loads the next image to avoid showing a loading placeholder if possible
+                        loadPrevNextAmount: 2 //or, if you wish, preload the next 2 images
+                    },
+                    breakpoints: {
+                        551: {
+                            spaceBetween: 20,
+                            slidesPerView: 1.2
+                        },
+                        768: {
+                            spaceBetween: 20,
+                            slidesPerView: 1.8
+                        },
+                        981: {
+                            spaceBetween: 20,
+                            slidesPerView: 2.3
+                        }
+                    }
+                });
+            }
+        },
+        // SERVICES-BLOCK END
 
         // STORIES-BLOCK BEGIN
         storiesFunctions: function() {
@@ -170,6 +248,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // PRICING-BLOCK BEGIN
         pricingFunctions: function() {
+            let pricingBlockItems = document.querySelectorAll('.pricing-block__item-btn a');
+            if(pricingBlockItems) {
+                pricingBlockItems.forEach(function(item){
+                    if(item.dataset.item) {
+                        item.addEventListener('click', function(e){
+                            e.preventDefault();
+                            document.querySelector('html').classList.add('overflow_hidden')
+                            document.querySelector(`.popup-block.pricing-popup[data-item="${item.dataset.item}"]`).classList.add('opened')
+                        })
+                    }
+                })
+            }
             const SWIPER4 = new Swiper('.swiper.pricing-block__slider-inner', {
                 slidesPerView: 3,
                 loop: false,
@@ -181,16 +271,36 @@ document.addEventListener('DOMContentLoaded', function () {
                     loadPrevNextAmount: 2 //or, if you wish, preload the next 2 images
                 },
                 breakpoints: {
-                    1024: {
-                        slidesPerView: 1
+                    550: {
+                        slidesPerView: 1.2
                     },
-                    1025: {
-                        slidesPerView: 2
+                    768: {
+                        slidesPerView: 1.8
+                    },
+                    980: {
+                        slidesPerView: 2.2
                     }
                 }
             });
         },
         // PRICING-BLOCK END
+
+        // SUPPORT-BLOCK BEGIN
+        supportFunctions: function() {
+            let supportBlocks = document.querySelectorAll('.support-block__item');
+
+            if(supportBlocks) {
+                supportBlocks.forEach(function(item){
+                    if(item.dataset.item) {
+                        item.addEventListener('click', function(){
+                            document.querySelector('html').classList.add('overflow_hidden')
+                            document.querySelector(`.popup-block.support-popup[data-item="${item.dataset.item}"]`).classList.add('opened')
+                        })
+                    }
+                })
+            }
+        },
+        // SUPPORT-BLOCK END
 
         // BLOCK ANIMATIONS BEGIN
         animationsFunctions: function() {
@@ -210,7 +320,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             });
-        }
+        },
         // BLOCK ANIMATIONS END
+
+        // OTHER FUNCTIONS BEGIN
+        otherFunctions: function() {
+            let popupCloser = document.querySelector('.popup-block__closer');
+            if(popupCloser) {
+                document.querySelectorAll('.popup-block__closer').forEach(function(item){
+                    item.addEventListener('click', function(){
+                        item.closest('.popup-block').classList.remove('opened')
+                        document.querySelector('html').classList.remove('overflow_hidden')
+                    })
+                })
+            }
+        }
+        // OTHER FUNCTIONS END
     }
 }())
