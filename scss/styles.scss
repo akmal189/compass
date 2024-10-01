@@ -1896,7 +1896,7 @@ img, iframe, video {
         display: flex;
         align-items: center;
         @media all and (max-width: 980px) {
-            padding: 19px 60px 25px 23px;
+            padding: 19px 56px 25px 23px;
         }
         @media all and (max-width: 768px) {
             width: calc(50% - 10px);
@@ -2113,6 +2113,7 @@ img, iframe, video {
     position: relative;
     padding-top: 60px;
     padding-bottom: 71px;
+    overflow: hidden;
     @media all and (max-width: 980px) {
         padding-top: 23px;
         padding-bottom: 20px;
@@ -2309,6 +2310,7 @@ img, iframe, video {
         @media all and (max-width: 700px) {
             flex-direction: column;
             padding-left: 50px;
+            gap: 10px;
         }
     }
     &__address {
@@ -2316,6 +2318,10 @@ img, iframe, video {
         max-width: 260px;
         padding-left: 28px;
         position: relative;
+        @media all and (max-width: 700px) {
+            max-width: 100%;
+            order: 99;
+        }
         &:before {
             content: '';
             position: absolute;
@@ -2369,6 +2375,9 @@ img, iframe, video {
     &__contacts {
         width: 100%;
         max-width: 220px;
+        @media all and (max-width: 700px) {
+            max-width: 100%;
+        }
     }
     &__phones {
         display: flex;
@@ -2449,6 +2458,8 @@ img, iframe, video {
         @media all and (max-width: 700px) {
             width: calc(100% + 50px);
             margin-left: -50px;
+            margin-top: 15px;
+            order: 999;
         }
         a {
             border: 1px solid #fff;
