@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     e.preventDefault();
                     blockId = item.getAttribute('href');
                     scrollToElement(blockId, 100);
-                    document.querySelector('.site-header__burger-btn').classList.remove('opened')
+                    document.querySelector('.site-header__burger-btn').classList.remove('active')
                     document.querySelector('.site-header__right').classList.remove('opened')
                     document.querySelector('html').classList.remove('overflow_hidden')
                 })
