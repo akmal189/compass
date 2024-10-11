@@ -61,15 +61,20 @@ document.addEventListener('DOMContentLoaded', function () {
                     HEADER_WR.classList.remove('fixed')
                 }
             })
-
+            let scrollHeight = IsMobile ? 500 : 800;
+            console.log(scrollHeight)
             window.addEventListener('scroll', () => {
-                if (document.scrollingElement.scrollTop > 800) {
+                if (document.scrollingElement.scrollTop > scrollHeight) {
                     document.querySelector('.to-top-btn a').classList.add('active')
                 } else {
                     document.querySelector('.to-top-btn a').classList.remove('active')
                 }
             });
             document.querySelector('.to-top-btn a').addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            document.querySelector('.site-header__logo').addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
@@ -332,6 +337,34 @@ document.addEventListener('DOMContentLoaded', function () {
                         item.closest('.popup-block').classList.remove('opened')
                         document.querySelector('html').classList.remove('overflow_hidden')
                     })
+                })
+            }
+            if(document.querySelector('.site-footer__btn a')) {
+                document.querySelector('.site-footer__btn a').addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.querySelector('html').classList.add('overflow_hidden')
+                    document.querySelector(`.popup-block.popup-form`).classList.add('opened')
+                })
+            }
+            if(document.querySelector('.site-header__button a')) {
+                document.querySelector('.site-header__button a').addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.querySelector('html').classList.add('overflow_hidden')
+                    document.querySelector(`.popup-block.popup-form`).classList.add('opened')
+                })
+            }
+            if(document.querySelector('.benefits-block__btn a')) {
+                document.querySelector('.benefits-block__btn a').addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.querySelector('html').classList.add('overflow_hidden')
+                    document.querySelector(`.popup-block.popup-form`).classList.add('opened')
+                })
+            }
+            if(document.querySelector('.first-block__btn a')) {
+                document.querySelector('.first-block__btn a').addEventListener('click', function(e){
+                    e.preventDefault();
+                    document.querySelector('html').classList.add('overflow_hidden')
+                    document.querySelector(`.popup-block.popup-form`).classList.add('opened')
                 })
             }
         }
