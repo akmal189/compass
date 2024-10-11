@@ -230,9 +230,6 @@ img, iframe, video {
             border-radius: 250px;
             color: #fff;
             padding: 8px 28px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
             transition: all .5s ease;
             font-family: $mainfont2;
             font-size: 16px;
@@ -240,22 +237,48 @@ img, iframe, video {
             line-height: 24px;
             background: var(--primary);
             position: relative;
+            overflow: hidden;
             @media all and (max-width: 980px) {
                 padding: 3px 18px;
             }
             &:hover {
                 background: var(--primary-hover);
+                &:after {
+                    transform: scaleY(1);
+                    transform-origin: bottom left;
+                }
             }
             &:after {
                 content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: var(--primary-2);
+                transform: scaleY(0);
+                transform-origin: top left;
+                transition: transform .5s cubic-bezier(.165,.84,.44,1) 0s;
+                border-radius: 250px;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+            span {
                 position: relative;
-                display: inline-block;
-                min-width: 20px;
-                width: 20px;
-                height: 15px;
-                background: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.9835 8.60261C21.374 8.21209 21.374 7.57893 20.9835 7.1884L14.6195 0.82444C14.229 0.433916 13.5958 0.433916 13.2053 0.82444C12.8148 1.21496 12.8148 1.84813 13.2053 2.23865L18.8622 7.89551L13.2053 13.5524C12.8148 13.9429 12.8148 14.5761 13.2053 14.9666C13.5958 15.3571 14.229 15.3571 14.6195 14.9666L20.9835 8.60261ZM0.276367 8.89551H20.2764V6.89551H0.276367V8.89551Z' fill='white'/%3E%3C/svg%3E%0A") 50%/cover no-repeat;
-                @media all and (max-width: 980px) {
-                    display: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                z-index: 2;
+                &:after {
+                    content: '';
+                    position: relative;
+                    display: inline-block;
+                    min-width: 20px;
+                    width: 20px;
+                    height: 15px;
+                    background: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.9835 8.60261C21.374 8.21209 21.374 7.57893 20.9835 7.1884L14.6195 0.82444C14.229 0.433916 13.5958 0.433916 13.2053 0.82444C12.8148 1.21496 12.8148 1.84813 13.2053 2.23865L18.8622 7.89551L13.2053 13.5524C12.8148 13.9429 12.8148 14.5761 13.2053 14.9666C13.5958 15.3571 14.229 15.3571 14.6195 14.9666L20.9835 8.60261ZM0.276367 8.89551H20.2764V6.89551H0.276367V8.89551Z' fill='white'/%3E%3C/svg%3E%0A") 50%/cover no-repeat;
+                    @media all and (max-width: 980px) {
+                        display: none;
+                    }
                 }
             }
         }
@@ -477,6 +500,14 @@ img, iframe, video {
     }
     &__btn {
         margin-top: 14px;
+        transition: all 1s ease;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        &.active {
+            width: 100%;
+            height: 100%;
+        }
         @media all and (max-width: 980px) {
             position: relative;
             margin-top: 35px;
@@ -495,6 +526,7 @@ img, iframe, video {
             line-height: 24px;
             background: var(--primary);
             position: relative;
+            white-space: nowrap;
             @media all and (max-width: 980px) {
                 padding: 12.5px 47px;
             }
@@ -513,7 +545,7 @@ img, iframe, video {
         }
     }
     &__right {
-        width: calc(50% - 85px);
+        width: calc(50% - 10px);
         font-size: 0;
         padding-right: 26px;
         @media all and (max-width: 1200px) {
@@ -541,8 +573,15 @@ img, iframe, video {
         overflow: hidden;
         position: relative;
         filter: drop-shadow(0px 6px 14px rgba(0, 0, 0, 0.32));
+        transition: all 1s ease;
+        transform: scale(0);
+        will-change: transform;
+        &.active {
+            transform: scale(1);
+        }
         iframe {
             width: 100%;
+            
             @media all and (max-width: 480px) {
                 height: auto;
                 min-height: 204px;
@@ -591,6 +630,7 @@ img, iframe, video {
     }
     &__list {
         position: relative;
+        z-index: 1;
         @media all and (max-width: 980px) {
             width: calc(100% + 20px);
             margin-right: -20px;
@@ -1309,17 +1349,18 @@ img, iframe, video {
         a {
             border-radius: 250px;
             color: #fff;
-            padding: 12.5px 53.5px;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             transition: all .5s ease;
             font-family: $mainfont2;
-            font-size: 16px;
             font-weight: 700;
             line-height: 24px;
             background: var(--primary);
             position: relative;
+            font-size: 0;
+            width: 0;
+            overflow: hidden;
             &:hover {
                 background: var(--primary-hover);
             }
@@ -1332,6 +1373,7 @@ img, iframe, video {
                 height: 15px;
                 background: url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.9835 8.60261C21.374 8.21209 21.374 7.57893 20.9835 7.1884L14.6195 0.82444C14.229 0.433916 13.5958 0.433916 13.2053 0.82444C12.8148 1.21496 12.8148 1.84813 13.2053 2.23865L18.8622 7.89551L13.2053 13.5524C12.8148 13.9429 12.8148 14.5761 13.2053 14.9666C13.5958 15.3571 14.229 15.3571 14.6195 14.9666L20.9835 8.60261ZM0.276367 8.89551H20.2764V6.89551H0.276367V8.89551Z' fill='white'/%3E%3C/svg%3E%0A") 50%/cover no-repeat;
             }
+
         }
     }
     &__list {
@@ -1452,19 +1494,19 @@ img, iframe, video {
         text-align: left;
         color: var(--primary);
         position: relative;
-        &:before {
-            content: '';
-            position: absolute;
-            top: -16px;
-            left: -14px;
-            width: 85px;
-            height: 85px;
-            border-radius: 100%;
-            background: #F3EFEB;
-        }
         span {
             position: relative;
         }
+    }
+    &__item-circle {
+        position: absolute;
+        top: -16px;
+        left: -14px;
+        width: 0;
+        height: 0;
+        border-radius: 100%;
+        background: #F3EFEB;
+        transition: all 0.5s ease;
     }
     &__item-title {
         font-family: $mainfont2;
@@ -1776,15 +1818,20 @@ img, iframe, video {
         gap: 20px;
         opacity: 1 !important;
         visibility: hidden;
+        @media all and (max-width: 1024px) {
+            visibility: visible;
+        }
         @media all and (max-width: 980px) {
             flex-direction: column;
             gap: 0;
         }
-        &:not(.swiper-slide-active) {
-            visibility: hidden;
-        }
-        &.swiper-slide-active {
-            visibility: visible;
+        @media all and (min-width: 1025px) {
+            &:not(.swiper-slide-active) {
+                visibility: hidden;
+            }
+            &.swiper-slide-active {
+                visibility: visible;
+            }
         }
     }
     &__left {
@@ -2177,6 +2224,10 @@ img, iframe, video {
     &__item-btn {
         margin-top: 22px;
         padding: 0 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30px;
         @media all and (max-width: 480px) {
             padding: 0;
         }
@@ -2186,9 +2237,10 @@ img, iframe, video {
             color: #fff;
             border-radius: 250px;
             background: var(--primary);
-            padding: 15.6px;
+            font-size: 0;
             text-align: center;
             transition: all 0.5s ease;
+            width: 0;
             &:hover {
                 opacity: 0.8;
             }

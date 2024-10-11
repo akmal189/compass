@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         1024: {
                             spaceBetween: 20,
-                            slidesPerView: 3
+                            slidesPerView: 3.1
                         }
                     }
                 });
@@ -225,10 +225,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // STORIES-BLOCK BEGIN
         storiesFunctions: function() {
+            let storiesSliderEffect;
+            if(IsMobile || window.outerWidth < 1026) {
+                storiesSliderEffect = 'slide';
+            } else {
+                storiesSliderEffect = 'fade';
+            }
             const SWIPER3 = new Swiper('.swiper.stories-block__slider', {
                 slidesPerView: 1,
                 loop: true,
-                effect: 'fade',
+                effect: storiesSliderEffect,
                 speed: 1000,
                 spaceBetween: 0,
                 lazy: {
@@ -287,6 +293,50 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             });
+
+            
+            // Функция для добавления стилей
+            const addStyles = (element) => {
+                gsap.to(element, {
+                padding: "15.6px", 
+                fontSize: "16px", 
+                width: '100%',
+                duration: 0.3, 
+                overwrite: "auto"
+                });
+            };
+            
+            // Функция для удаления стилей
+            const removeStyles = (element) => {
+                gsap.to(element, {
+                padding: "", // Установите обратно на исходное значение
+                fontSize: "", // Установите обратно на исходное значение
+                duration: 0.3, 
+                width: 0,
+                overwrite: "auto"
+                });
+            };
+            
+            // Создаем экземпляр Intersection Observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        addStyles(entry.target);
+                    }, 300);
+                } else {
+                    removeStyles(entry.target);
+                }
+                });
+            });
+            
+            // Находим все кнопки
+            const buttons = document.querySelectorAll('.pricing-block__item-btn a');
+            
+            // Наблюдаем за каждой кнопкой
+            buttons.forEach(button => {
+                observer.observe(button);
+            });
         },
         // PRICING-BLOCK END
 
@@ -309,9 +359,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // BLOCK ANIMATIONS BEGIN
         animationsFunctions: function() {
-            const blocks = document.querySelectorAll(".site-wrapper > section");
+            let blocksTitle = document.querySelectorAll(".problems-block__top, .solutions-block__header, .features-block__title, .benefits-block__title, .steps-block__header, .services-block__header, .stories-block__title, .support-block__title, .pricing-block__header, .demobook-block__title");
             gsap.registerPlugin(ScrollTrigger);
-            blocks.forEach((block) => {
+            blocksTitle.forEach((block) => {
                 gsap.set(block, { opacity: 0, y: 250 });
 
                 ScrollTrigger.create({
@@ -325,6 +375,87 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             });
+            
+            let blocksBody, perItems;
+
+            if(!IsMobile) {
+                perItems = document.querySelectorAll('.solutions-block__item, .support-block__item, .services-block__item, .solutions-block__bottom-item, .steps-block__item');
+                // Настраиваем анимацию для каждого элемента
+                perItems.forEach((item, index) => {
+                    gsap.fromTo(item,
+                        {
+                            opacity: 0,
+                            y: 50
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scrollTrigger: {
+                                trigger: item,
+                                start: "top 80%", // Настраиваем когда запускать анимацию
+                                toggleActions: "play", // Настраиваем когда запускать и останавливать анимацию
+                                stagger: 0.1 // Задержка между анимацией элементов
+                            },
+                            duration: 0.5, // Длительность анимации
+                            delay: (index % 5) * 0.25 // Задержка между элементами в ряду по 5
+                        }
+                    );
+                });
+
+                blocksBody = document.querySelectorAll(".problems-block__list, .services-block__bottom, .features-block__list, .benefits-block__body, .stories-block__body, .pricing-block__body, .demobook-block__form-inner");
+                blocksBody.forEach((block) => {
+                    gsap.set(block, { opacity: 0, y: 250 });
+
+                    ScrollTrigger.create({
+                        trigger: block,
+                        scroller: "body",
+                        start: "top 89%",
+                        stagger: 3.7, // Задержка между анимацией элементов
+                        toggleActions: "play reverse play reverse",
+                        onEnter: () => {
+                            gsap.to(block, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" });
+                        }
+                    });
+                });
+            } else {
+                perItems = document.querySelectorAll('.solutions-block__item, .steps-block__item');
+                // Настраиваем анимацию для каждого элемента
+                perItems.forEach((item, index) => {
+                    gsap.fromTo(item,
+                        {
+                            opacity: 0,
+                            y: 50
+                        },
+                        {
+                            opacity: 1,
+                            y: 0,
+                            scrollTrigger: {
+                                trigger: item,
+                                start: "top 80%", // Настраиваем когда запускать анимацию
+                                toggleActions: "play", // Настраиваем когда запускать и останавливать анимацию
+                                stagger: 0.1 // Задержка между анимацией элементов
+                            },
+                            duration: 0.5, // Длительность анимации
+                            delay: (index % 5) * 0.25 // Задержка между элементами в ряду по 5
+                        }
+                    );
+                });
+                blocksBody = document.querySelectorAll(".problems-block__list, .support-block__item .services-block__bottom, .solutions-block__bottom, .features-block__list, .benefits-block__body, .stories-block__body, .pricing-block__body, .demobook-block__form-inner");
+                blocksBody.forEach((block) => {
+                    gsap.set(block, { opacity: 0, y: 250 });
+
+                    ScrollTrigger.create({
+                        trigger: block,
+                        scroller: "body",
+                        start: "top 89%",
+                        stagger: 3.7, // Задержка между анимацией элементов
+                        toggleActions: "play reverse play reverse",
+                        onEnter: () => {
+                            gsap.to(block, { opacity: 1, y: 0, duration: 1.2, ease: "power2.out" });
+                        }
+                    });
+                });
+            }
         },
         // BLOCK ANIMATIONS END
 
@@ -366,6 +497,101 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.querySelector('html').classList.add('overflow_hidden')
                     document.querySelector(`.popup-block.popup-form`).classList.add('opened')
                 })
+            }
+
+            // Функция для добавления стилей
+            let addStylesBenefits = (element) => {
+                gsap.to(element, {
+                padding: "12.5px 53.5px", 
+                fontSize: "16px", 
+                width: 'auto',
+                duration: 0.3, 
+                overwrite: "auto"
+                });
+            };
+            
+            // Функция для удаления стилей
+            let removeStylesBenefits = (element) => {
+                gsap.to(element, {
+                padding: "", // Установите обратно на исходное значение
+                fontSize: "", // Установите обратно на исходное значение
+                duration: 0.3, 
+                width: 0,
+                overwrite: "auto"
+                });
+            };
+            
+            // Создаем экземпляр Intersection Observer
+            let observerBenefits = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        addStylesBenefits(entry.target);
+                    }, 300);
+                } else {
+                    removeStylesBenefits(entry.target);
+                }
+                });
+            });
+            
+            // Находим все кнопки
+            let benefitsButtons = document.querySelectorAll('.benefits-block__btn a');
+            
+            // Наблюдаем за каждой кнопкой
+            benefitsButtons.forEach(button => {
+                observerBenefits.observe(button);
+            });
+
+            // Функция для добавления стилей
+            let addStylesSteps = (element) => {
+                gsap.to(element, {
+                height: "85px", 
+                width: '85px',
+                duration: 0.3, 
+                overwrite: "auto"
+                });
+            };
+            
+            // Функция для удаления стилей
+            let removeStylesSteps = (element) => {
+                gsap.to(element, {
+                width: "0", // Установите обратно на исходное значение
+                height: "0", // Установите обратно на исходное значение
+                duration: 0.3, 
+                overwrite: "auto"
+                });
+            };
+            
+            // Создаем экземпляр Intersection Observer
+            let observerSteps = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        addStylesSteps(entry.target);
+                    }, 100);
+                } else {
+                    removeStylesSteps(entry.target);
+                }
+                });
+            });
+            
+            // Находим все кнопки
+            let stepsButtons = document.querySelectorAll('.steps-block__item-circle');
+            
+            // Наблюдаем за каждой кнопкой
+            stepsButtons.forEach(button => {
+                observerSteps.observe(button);
+            });
+
+            if(document.querySelector('.first-block__btn')) {
+                setTimeout(() => {
+                    document.querySelector('.first-block__btn').classList.add('active')
+                }, 1000);
+            }
+            if(document.querySelector('.first-block__video')) {
+                setTimeout(() => {
+                    document.querySelector('.first-block__video').classList.add('active')
+                }, 1300);
             }
         }
         // OTHER FUNCTIONS END
