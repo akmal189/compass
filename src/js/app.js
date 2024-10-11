@@ -503,6 +503,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (event.key === 'Escape') {
                     let popup = document.querySelector('.popup-block');
                     if (popup) {
+                        document.querySelector('html').classList.remove('overflow_hidden')
                         document.querySelectorAll('.popup-block').forEach((el) => el.classList.remove('opened'));
                     }
                 }
