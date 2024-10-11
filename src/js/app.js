@@ -499,6 +499,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
             }
 
+            document.addEventListener('keyup', function(event) {
+                if (event.key === 'Escape') {
+                    let popup = document.querySelector('.popup-block');
+                    if (popup) {
+                        document.querySelectorAll('.popup-block').forEach((el) => el.classList.remove('opened'));
+                    }
+                }
+            });
+
             // Функция для добавления стилей
             let addStylesBenefits = (element) => {
                 gsap.to(element, {

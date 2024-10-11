@@ -2679,6 +2679,9 @@ img, iframe, video {
     &.opened {
         opacity: 1;
         visibility: visible;
+        .popup-block__inner {
+            transform: scale(1);
+        }
     }
     &.popup-form {
         .popup-block__title {
@@ -2712,6 +2715,9 @@ img, iframe, video {
         max-height: 600px;
         max-width: 1000px;
         height: 100%;
+        transform: scale(0);
+        transition: all 0.5s ease;
+        will-change: transform;
         @media all and (max-width: 980px) {
             padding: 20px;
         }
