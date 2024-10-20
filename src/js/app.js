@@ -431,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             y: 0,
                             scrollTrigger: {
                                 trigger: item,
-                                start: "top 90%", // Настраиваем когда запускать анимацию
+                                start: "top 70%", // Настраиваем когда запускать анимацию
                                 toggleActions: "play", // Настраиваем когда запускать и останавливать анимацию
                                 stagger: 0.1 // Задержка между анимацией элементов
                             },
@@ -447,7 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ScrollTrigger.create({
                         trigger: block,
                         scroller: "body",
-                        start: "top 75%",
+                        start: "top 65%",
                         stagger: 3.7, // Задержка между анимацией элементов
                         toggleActions: "play reverse play reverse",
                         onEnter: () => {
