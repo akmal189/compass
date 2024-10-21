@@ -418,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
                 });
             } else {
-                perItems = document.querySelectorAll('.solutions-block__item, .steps-block__item');
+                perItems = document.querySelectorAll('.solutions-block__item, .support-block__item, .steps-block__item');
                 // Настраиваем анимацию для каждого элемента
                 perItems.forEach((item, index) => {
                     gsap.fromTo(item,
@@ -440,14 +440,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         }
                     );
                 });
-                blocksBody = document.querySelectorAll(".problems-block__list, .support-block__item .services-block__bottom, .solutions-block__bottom, .features-block__list, .benefits-block__body, .stories-block__body, .pricing-block__body, .demobook-block__form-inner");
+                blocksBody = document.querySelectorAll(".features-block__image, .services-block__bottom, .problems-block__list, .support-block__item .services-block__bottom, .solutions-block__bottom, .features-block__list, .benefits-block__body, .stories-block__body, .pricing-block__body, .demobook-block__form-inner");
                 blocksBody.forEach((block) => {
                     gsap.set(block, { opacity: 0, y: 250 });
 
                     ScrollTrigger.create({
                         trigger: block,
                         scroller: "body",
-                        start: "top 89%",
+                        start: "top 50%",
                         stagger: 3.7, // Задержка между анимацией элементов
                         toggleActions: "play reverse play reverse",
                         onEnter: () => {
