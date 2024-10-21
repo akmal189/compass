@@ -447,11 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ScrollTrigger.create({
                         trigger: block,
                         scroller: "body",
-<<<<<<< HEAD
                         start: "top 50%",
-=======
-                        start: "top 65%",
->>>>>>> 436c1113295b79720f2392e0d8900fd9af89bdd2
                         stagger: 3.7, // Задержка между анимацией элементов
                         toggleActions: "play reverse play reverse",
                         onEnter: () => {
